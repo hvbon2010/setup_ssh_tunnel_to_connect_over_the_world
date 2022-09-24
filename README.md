@@ -54,3 +54,7 @@ ExecStop=/usr/bin/killall ngrok
 [Install]
 WantedBy=multi-user.target
 ```
+
+Restart ngrok.service
+
+`systemctl enable ngrok.service && systemctl start ngrok.service`
