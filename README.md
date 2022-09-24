@@ -60,3 +60,10 @@ Restart ngrok.service
 `systemctl enable ngrok.service`
 
 `systemctl start ngrok.service`
+
+Verify ngrok service
+
+`ps -A | grep ngrok`
+
+`cat /var/log/ngrok`
+
