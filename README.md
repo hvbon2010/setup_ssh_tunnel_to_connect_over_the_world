@@ -53,7 +53,6 @@ Type=simple
 
 [Install]
 WantedBy=multi-user.target
-pi@raspberrypi:/lib/system
 ```
 
 Restart ngrok.service
