@@ -48,7 +48,7 @@ Restart=always
 RestartSec=1min
 StandardOutput=null
 StandardError=null
-ExecStart=/usr/local/bin/ngrok start --log /var/log/ngrok.log --config /home/${USER_NAME}/.config/ngrok/ngrok.yml --all
+ExecStart=/usr/local/bin/ngrok start --log /var/log/ngrok.log --config /home/${USER}/.config/ngrok/ngrok.yml --all
 ExecStop=/usr/bin/killall ngrok
 
 [Install]
