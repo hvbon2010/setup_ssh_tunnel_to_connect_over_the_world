@@ -17,7 +17,7 @@ https://dashboard.ngrok.com/get-started/your-authtoken
 `ngrok config add-authtoken <your-token>`
 
 Authen-token will be added at `/home/<user-name>/.config/ngrok/ngrok.yml`
-### Create a SSH tunel server
+### Create a SSH tunnel server
 `ngrok tcp 22`
 
 ### Create a ngrok system service
@@ -31,7 +31,7 @@ version: "2"
 authtoken: <your-authentoken>
 
 tunnels:
-  ssh-tunel:
+  ssh-tunnel:
     proto: tcp
     addr: 22
 ```
@@ -46,7 +46,7 @@ Description=ngrok
 After=network.target
 
 [Service]
-ExecStart=/usr/local/bin/ngrok start ssh-tunel --log /var/log/ngrok.log --config /opt/ngrok/ngrok.yml 
+ExecStart=/usr/local/bin/ngrok start ssh-tunnel --log /var/log/ngrok.log --config /opt/ngrok/ngrok.yml 
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 IgnoreSIGPIPE=true
@@ -70,7 +70,7 @@ Verify ngrok service
 
 `cat /var/log/ngrok`
 
-### SSH over ngrok tunel
+### SSH over ngrok tunnel
 Go to https://dashboard.ngrok.com/cloud-edge/endpoints to get tcp URL
 
 Like that: `tcp://0.tcp.ap.ngrok.io:13816`
