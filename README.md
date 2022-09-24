@@ -24,9 +24,12 @@ Authen-token will be added at `/home/<user-name>/.config/ngrok/ngrok.yml`
 #### Add tunnel config to ngrok.yml
 
 Run `ngrok config edit`
-Add bellow config to `/home/<user-name>/.config/ngrok/ngrok.yml`
+Add bellow config to `/opt/ngrok/ngrok.yml`
 
 ```
+version: "2"
+authtoken: <your-authentoken>
+
 tunnels:
   ssh-tunel:
     proto: tcp
@@ -43,7 +46,7 @@ Description=ngrok
 After=network.target
 
 [Service]
-ExecStart=/usr/local/bin/ngrok start --log /var/log/ngrok.log --config /home/${USER}/.config/ngrok/ngrok.yml --all
+ExecStart=/usr/local/bin/ngrok start ssh-tunel --log /var/log/ngrok.log --config /opt/ngrok/ngrok.yml 
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 IgnoreSIGPIPE=true
