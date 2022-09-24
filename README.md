@@ -34,27 +34,29 @@ tunnels:
 ```
 
 #### Create ngrok system service 
-`cd /etc/systemd/system`
+`cd /lib/systemd/system`
 
 Create `ngrok.service` file like that:
 ```
 [Unit]
-Description=Share local port(s) with ngrok
-After=syslog.target network.target
+Description=ngrok
+After=network.target
 
 [Service]
-Type=simple
-Restart=always
-RestartSec=1min
-StandardOutput=null
-StandardError=null
 ExecStart=/usr/local/bin/ngrok start --log /var/log/ngrok.log --config /home/${USER}/.config/ngrok/ngrok.yml --all
-ExecStop=/usr/bin/killall ngrok
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+IgnoreSIGPIPE=true
+Restart=always
+RestartSec=3
+Type=simple
 
 [Install]
 WantedBy=multi-user.target
+pi@raspberrypi:/lib/system
 ```
 
 Restart ngrok.service
 
-`systemctl enable ngrok.service && systemctl start ngrok.service`
+`systemctl enable ngrok.service`
+`systemctl start ngrok.service`
