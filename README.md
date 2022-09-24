@@ -60,7 +60,7 @@ WantedBy=multi-user.target
 
 Restart ngrok.service
 
-`systemctl enable ngrok.service`
+`systemctl enable ngrok.s0.tcp.ap.ngrok.ioervice`
 
 `systemctl start ngrok.service`
 
@@ -70,3 +70,8 @@ Verify ngrok service
 
 `cat /var/log/ngrok`
 
+### SSH over ngrok tunel
+Go to https://dashboard.ngrok.com/cloud-edge/endpoints to get tcp URL
+Like that: `tcp://0.tcp.ap.ngrok.io:13816`
+
+`ssh <user_name>@0.tcp.ap.ngrok.io -p 13816`
