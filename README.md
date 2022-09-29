@@ -60,7 +60,7 @@ WantedBy=multi-user.target
 
 Restart ngrok.service
 
-`systemctl enable ngrok.s0.tcp.ap.ngrok.ioervice`
+`systemctl enable ngrok.service`
 
 `systemctl start ngrok.service`
 
