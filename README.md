@@ -22,7 +22,9 @@ Authen-token will be added at `/home/<user-name>/.config/ngrok/ngrok.yml`
 #### Add tunnel config to ngrok.yml
 `sudo mkdir -p /opt/ngrok`
 
-Add bellow config to `/opt/ngrok/ngrok.yml`
+`sudo vim /opt/ngrok/ngrok.yml`
+
+Add bellow config
 
 ```
 version: "2"
