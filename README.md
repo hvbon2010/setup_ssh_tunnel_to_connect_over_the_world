@@ -17,13 +17,10 @@ https://dashboard.ngrok.com/get-started/your-authtoken
 `ngrok config add-authtoken <your-token>`
 
 Authen-token will be added at `/home/<user-name>/.config/ngrok/ngrok.yml`
-### Create a SSH tunnel server
-`ngrok tcp 22`
 
 ### Create a ngrok system service
 #### Add tunnel config to ngrok.yml
 
-Run `ngrok config edit`
 Add bellow config to `/opt/ngrok/ngrok.yml`
 
 ```
