@@ -37,9 +37,10 @@ tunnels:
 ```
 
 #### Create ngrok system service 
-`cd /lib/systemd/system`
+`sudo vim /lib/systemd/system/ngrok.service`
 
-Create `ngrok.service` file like that:
+Add below config
+
 ```
 [Unit]
 Description=ngrok
