@@ -20,6 +20,7 @@ Authen-token will be added at `/home/<user-name>/.config/ngrok/ngrok.yml`
 
 ### Create a ngrok system service
 #### Add tunnel config to ngrok.yml
+`sudo mkdir -p /opt/ngrok`
 
 Add bellow config to `/opt/ngrok/ngrok.yml`
 
