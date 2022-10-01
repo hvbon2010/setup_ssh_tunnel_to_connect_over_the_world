@@ -14,10 +14,6 @@ Go to `your-authtoken` page and get authentoken
 
 https://dashboard.ngrok.com/get-started/your-authtoken
 
-`ngrok config add-authtoken <your-token>`
-
-Authen-token will be added at `/home/<user-name>/.config/ngrok/ngrok.yml`
-
 ### Create a ngrok system service
 #### Add tunnel config to ngrok.yml
 `sudo mkdir -p /opt/ngrok`
@@ -67,9 +63,7 @@ Restart ngrok.service
 
 Verify ngrok service
 
-`ps -A | grep ngrok`
-
-`cat /var/log/ngrok`
+`systemctl status ngrok.service`
 
 ### SSH over ngrok tunnel
 Go to https://dashboard.ngrok.com/cloud-edge/endpoints to get tcp URL
